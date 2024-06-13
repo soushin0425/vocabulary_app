@@ -12,7 +12,7 @@
 </template>
   
 <script>
-import VocabPhase from './components/project_page/VocabPhaseComponent.vue';
+import VocabPhase from '../components/VocabPhaseComponent.vue';
 
 export default {
     name: 'Project',
