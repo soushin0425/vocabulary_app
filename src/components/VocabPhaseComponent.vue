@@ -21,8 +21,8 @@ export default {
 
 <style>
 .vocab-phase {
-  float: left;
-  width:280px;
+  max-width:280px;
+  width: 100%;
   height:700px;
   margin: 20px;
   border-radius: 10px;

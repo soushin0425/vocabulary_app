@@ -1,14 +1,18 @@
 <template>
-    <h1>{{ project }}</h1>
     <div>
+        <h1>{{ project }}</h1>
         <div>
-            <div></div>
+            <div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vocab-phase-container">
+            <VocabPhase backgroundColor="#f1f1d5"></VocabPhase>
+            <VocabPhase backgroundColor="#d3f2e0"></VocabPhase>
+            <VocabPhase backgroundColor="#ead5f0"></VocabPhase>
+            <VocabPhase backgroundColor="#cbdaf0"></VocabPhase>
         </div>
     </div>
-    <VocabPhase backgroundColor="#f1f1d5"></VocabPhase>
-    <VocabPhase backgroundColor="#d3f2e0"></VocabPhase>
-    <VocabPhase backgroundColor="#ead5f0"></VocabPhase>
-    <VocabPhase backgroundColor="#cbdaf0"></VocabPhase>
 </template>
   
 <script>
@@ -24,3 +28,9 @@ export default {
     },
 }
 </script>
+
+<style>
+.vocab-phase-container {
+  display: flex; /* Arrange items horizontally */
+}
+</style>
