@@ -10,9 +10,9 @@
             + New Project
           </router-link>
         </div>
-        <template v-for="project in $store.state.proj_list" :key="project">
-          <router-link :to="{name: 'list', params: {project: project}}" class="btn project-link" :class="{ 'active-link': $route.params.project === project }">
-            <div class="text-fade">{{ project }}</div>
+        <template v-for="project in proj_list" :key="project.project_id">
+          <router-link :to="{name: 'list', params: {project_id: project.project_id}}" class="btn project-link" :class="{ 'active-link': $route.params.project_id === project.project_id.toString() }">
+            <div class="text-fade">{{ project.project_name }}</div>
           </router-link>
         </template>
       </div>
@@ -23,6 +23,12 @@
 <script>
 export default {
   name: 'Sidebar',
+  computed: {
+    proj_list() {
+      return this.$store.state.proj_list;
+    }
+  },
+  
 }
 </script>
   

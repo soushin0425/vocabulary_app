@@ -1,15 +1,17 @@
 <template>
   <div>
-    <template v-for="(project, index) in $store.state.proj_list">
-      <router-link :to="{ name: 'list', params: { project: project } }" class="project-item-link">
+    <template v-for="(project, index) in proj_list" :key="project.project_id">
+      <router-link :to="{ name: 'list', params: { project_id: project.project_id } }" class="project-item-link">
         <div class="project-item my-3">
           <div class="project-info">
-            {{ project }}
+            {{ project.project_name }}
           </div>
           <div class="project-stats">
             <div class="status">passive : 0</div>
             <div class="status">active : 0</div>
-            <button class="delete-button" v-on:click.stop.prevent="$store.commit('delete_project', index)">削除</button>
+            <button class="delete-button" v-on:click.stop.prevent="$store.commit('delete_project', index)">
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
+            </button>
           </div>
         </div>
       </router-link>
@@ -20,6 +22,11 @@
 <script>
 export default {
   name: 'ProjectList',
+  computed: {
+    proj_list() {
+      return this.$store.state.proj_list;
+    }
+  }
 }
 </script>
 
@@ -68,7 +75,7 @@ export default {
 }
 
 .delete-button {
-  width: 70px;
+  width: 50px;
   height: 40px;
   border-radius: 15px;
   background-color: red;
