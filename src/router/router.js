@@ -11,7 +11,7 @@ export const router = createRouter({
             component: Home,
         },
         {
-            path: '/list/:project',
+            path: '/list/:project_id',
             name: 'list',
             component: Project,
             props: true
