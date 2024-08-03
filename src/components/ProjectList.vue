@@ -32,7 +32,7 @@ export default {
 
 <style>
 .project-item {
-  background-color: white;
+  background-color: #FBF9F1;
   border-radius: 20px;
   padding-top: 1rem;
   padding-left: 1rem;
@@ -55,7 +55,7 @@ export default {
 }
 
 .project-item:hover {
-  background-color: #f0f0f0;
+  background-color: #AAD7D9;
 }
 
 .project-item-link {
