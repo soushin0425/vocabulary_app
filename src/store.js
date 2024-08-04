@@ -29,7 +29,8 @@ export const store = createStore({
         },
         //単語の追加
         add_word: (state,{project_id,input_word,input_status,input_meaning,input_image,input_example}) => {
-            state.word_list.push({ project_id: project_id, word_id: 0, word: input_word, status: input_status, meaning: input_meaning, image: input_image, example: input_example});
+            const newWordId = state.word_list.length;
+            state.word_list.push({ project_id: project_id, word_id: newWordId, word: input_word, status: input_status, meaning: input_meaning, image: input_image, example: input_example});
         }
     },
 })
